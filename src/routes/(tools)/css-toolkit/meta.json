@@ -1,9 +1,9 @@
 {
     "name": "CSS Toolkit",
-    "description":"",
+    "description":"CSS Hover effect Generator :- tool allows you to create and customize CSS hover effects effortlessly. Adjust background and hover colors, scaling, and rotation to preview and generate CSS code in real-time. Perfect for designers and developers looking to enhance user interactions with stylish hover effects.",
     "contributors": [{
-        "name": "",
-        "githubId": ""
+        "name": "Rishabh Rai",
+        "githubId": "RishabhRai280"
     }, {
         "name": "",
         "githubId": ""
