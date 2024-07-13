@@ -1,70 +1,114 @@
-<script>
-  import TextGradient from './TextGradient.svelte';
-  import BoxShadow from './BoxShadow.svelte';
-  import HoverEffect from './HoverEffect.svelte';
- 
+<!-- <script>
+	import TextGradient from './TextGradient.svelte';
+	import BoxShadow from './BoxShadow.svelte';
+	import HoverEffect from './HoverEffect.svelte';
+	import Glassmorphism from './Glassmorphism.svelte';
 
-  let currentTool = 'TextGradient';
+	let currentTab = 'CSS Text Gradient Generator';
+
+	const tabs = [
+		{ name: 'CSS Text Gradient Generator', component: TextGradient },
+		{ name: 'CSS Box Shadow Generator', component: BoxShadow },
+		{ name: 'CSS Hover Effect Generator', component: HoverEffect },
+		{ name: 'CSS Glassmorphism Generator', component: Glassmorphism }
+	];
+
+	function selectTab(tabName) {
+		currentTab = tabName;
+	}
 </script>
 
+<div class="flowbite"> -->
+	<!-- Tab Navigation -->
+	<!-- <div class="flex border-b border-gray-200 dark:border-gray-700 justify-center space-x-4">
+		{#each tabs as tab}
+			<button
+				class="tab-button inline-block py-4 px-6 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+				class:active-tab={currentTab === tab.name}
+				on:click={() => selectTab(tab.name)}
+			>
+				{tab.name}
+			</button>
+		{/each}
+	</div> -->
+
+	<!-- Tab Content -->
+	<!-- <div class="p-4 bg-white rounded-lg dark:bg-gray-800 mt-4">
+		{#if currentTab === 'CSS Text Gradient Generator'}
+			<TextGradient />
+		{:else if currentTab === 'CSS Box Shadow Generator'}
+			<BoxShadow />
+		{:else if currentTab === 'CSS Hover Effect Generator'}
+			<HoverEffect />
+		{:else if currentTab === 'CSS Glassmorphism Generator'}
+			<Glassmorphism />
+		{/if}
+	</div>
+</div> 
+
 <style>
-  .container {
-    display: flex;
-    height: auto;
-    /* height: 100vh; */
-  }
-
-  .sidebar {
-    width: 200px;
-    background-color: #f0f0f0;
-    padding: 20px;
-  }
-
-  .content {
-    flex-grow: 1;
-    padding: 20px;
-    overflow-y: auto;
-  }
-
-  .sidebar button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: none;
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
-    border-radius: 4px;
-    text-align: left;
-  }
-
-  .sidebar button.active {
-    background-color: #0056b3;
-  }
+	.flowbite {
+		max-width: 800px;
+		margin: 0 auto;
+	}
+	
+	.flex {
+		display: flex;
+	}
+	.space-x-4 > * + * {
+		margin-left: 1rem;
+	}
+	.tab-button.active-tab {
+		border-bottom-color: #000; 
+		color: #000; 
+	}
 </style>
+ -->
 
-<div class="container">
-  <div class="sidebar">
-    <button class:active={currentTool === 'TextGradient'} on:click={() => currentTool = 'TextGradient'}>
-      CSS Text Gradient Generator
-    </button>
-    <button class:active={currentTool === 'BoxShadow'} on:click={() => currentTool = 'BoxShadow'}>
-      CSS Box Shadow Generator
-    </button>
-    <button class:active={currentTool === 'HoverEffect'} on:click={() => currentTool = 'HoverEffect'}>
-      CSS Hover Effect Generator
-    </button>
+
+ <script>
+	import TextGradient from './TextGradient.svelte';
+	import BoxShadow from './BoxShadow.svelte';
+	import HoverEffect from './HoverEffect.svelte';
+	import Glassmorphism from './Glassmorphism.svelte';
   
+	let currentTab = 'CSS Text Gradient Generator';
+  
+	const tabs = [
+	  { name: 'CSS Text Gradient Generator', component: TextGradient },
+	  { name: 'CSS Box Shadow Generator', component: BoxShadow },
+	  { name: 'CSS Hover Effect Generator', component: HoverEffect },
+	  { name: 'CSS Glassmorphism Generator', component: Glassmorphism },
+	];
+  
+	function selectTab(tabName) {
+	  currentTab = tabName;
+	}
+  </script>
+  
+  <div class="flowbite">
+	<div class="flex border-b border-gray-200 dark:border-gray-700 justify-center space-x-4">
+	  {#each tabs as tab}
+		<button
+		  class="tab-button inline-block py-4 px-6 rounded-t-lg text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-indigo-300"
+		  class:active-tab={currentTab === tab.name}
+		  on:click={() => selectTab(tab.name)}
+		>
+		  {tab.name}
+		</button>
+	  {/each}
+	</div>
+  
+	<div class="p-4 bg-white rounded-lg dark:bg-gray-800 mt-4">
+	  {#if currentTab === 'CSS Text Gradient Generator'}
+		<TextGradient />
+	  {:else if currentTab === 'CSS Box Shadow Generator'}
+		<BoxShadow />
+	  {:else if currentTab === 'CSS Hover Effect Generator'}
+		<HoverEffect />
+	  {:else if currentTab === 'CSS Glassmorphism Generator'}
+		<Glassmorphism />
+	  {/if}
+	</div>
   </div>
-
-  <div class="content">
-    {#if currentTool === 'TextGradient'}
-      <TextGradient />
-    {:else if currentTool === 'BoxShadow'}
-      <BoxShadow />
-    {:else if currentTool === 'HoverEffect'}
-      <HoverEffect />
-    {/if}
-  </div>
-</div>
+  
